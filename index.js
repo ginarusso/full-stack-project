@@ -1,6 +1,6 @@
 // database with alcohol and cocktail tables
 
-// database => cocktaildb
+// database => cocktaildatabase
 
 // cocktails table: id, cocktail_name, difficulty, image_url, portion, time, description, ingredients[], method[], category, alcohol_id
 // alcohol table: id, alcohol_name, brand
@@ -10,9 +10,11 @@
 // short, highball, blended, hot, tiki/specialty, shooter, healthy, smoothies, non-alcoholic
 
 const express = require('express')
+const cors = require('cors')
 const app = express()
-const port = 3000
+const port = 3001
 
+app.use(cors())
 app.use(express.json());
 
 const cocktailRoutes = require('./routers/cocktailRoutes')
