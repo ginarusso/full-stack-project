@@ -13,6 +13,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.use(express.json());
+
 const cocktailRoutes = require('./routers/cocktailRoutes')
 const alcoholRoutes = require('./routers/alcoholRoutes')
 

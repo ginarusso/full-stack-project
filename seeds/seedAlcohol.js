@@ -28,6 +28,17 @@ const alcoholArr = [
     {
         alcohol_name: "cognac",
         brand: "hennessy"
+    },
+    {
+        alcohol_name: "non-alcohol"
+    },
+    {
+        alcohol_name: "brandy",
+        brand: "remy martin"
+    },
+    {
+        alcohol_name: "prosecco",
+        brand: "Mionetto"
     }
 ];
 

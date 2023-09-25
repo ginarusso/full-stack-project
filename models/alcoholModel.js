@@ -16,7 +16,7 @@ const Alcohol = connectToDB.define("alcohol", {
     },
     brand: {
         type: DataTypes.STRING(50),
-        allowNull: false
+        allowNull: true
     }
 }, {
     timestamps: false,
