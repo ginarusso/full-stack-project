@@ -9,9 +9,8 @@ async function addDataToDB() {
     try {
         console.log("Seeding alcohol...");
         await Alcohol.bulkCreate(alcoholList);
-
         console.log("alcohol seeded successfully!");
-
+        
         console.log("Seeding cocktails...");
         await Cocktail.bulkCreate(cocktailList);
         console.log("cocktails seeded successfully!");

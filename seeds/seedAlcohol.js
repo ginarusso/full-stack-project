@@ -1,5 +1,3 @@
-// short, highball, blended, hot, specialty, shooter, healthy, smoothie, non-alcoholic
-
 const alcoholArr = [
     {
         alcohol_name: "vodka",
@@ -38,7 +36,7 @@ const alcoholArr = [
     },
     {
         alcohol_name: "prosecco",
-        brand: "Mionetto"
+        brand: "mionetto"
     }
 ];
 

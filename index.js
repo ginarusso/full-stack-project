@@ -7,7 +7,7 @@
 
 // https://www.barschool.net/us/blog/cocktails-101-history-and-types
 
-// short, highball, blended, hot, tiki/specialty, shooter, healthy, smoothies, non-alcoholic
+// short, highball, blended, hot, specialty, shooter, healthy, smoothies, non-alcoholic
 
 const express = require('express')
 const cors = require('cors')

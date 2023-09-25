@@ -2,7 +2,6 @@ const Alcohol = require("../models/alcoholModel")
 
 async function getAllAlcoholNames(req, res) {
     try {
-
         const results = await Alcohol.findAll()
         res.status(200).json(results)
     } catch (error) {
@@ -26,11 +25,9 @@ async function getAlcoholByID(req, res) {
 async function addAlcohol(req, res) {
     try {
         const alcohol = req.body;
-
         if (alcohol.alcohol_name === null || alcohol.brand === null) {
             res.status(400).json({ message: "The alcohol is missing some properties." });
         } else {
-    
             const newAlcohol = await Alcohol.create(alcohol)
             res.status(201).json(newAlcohol)
         }
