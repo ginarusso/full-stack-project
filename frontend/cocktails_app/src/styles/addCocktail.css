@@ -1,0 +1,80 @@
+/* CSS */
+
+h1 {
+    padding-left: .5em;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    background-color: white;
+  }
+  
+  .form-item {
+    display: flex;
+    flex-direction: column;
+    color: maroon;
+  }
+  
+  label {
+    font-weight: bold;
+    padding-left: 1.2em;
+    font-size: 1.2em;
+  }
+
+  textarea {
+    width: 16.8em;
+    margin: 1em;
+    opacity: .5;
+    padding: .5em;
+    text-align: center;
+  }
+
+  .flex {
+    display: flex;
+    padding: 0 1em;
+    justify-content: center;
+    text-transform: capitalize;
+  }
+  
+ .alcohol-list {
+    padding: 0;
+    font-size: .8em;
+    background-color: maroon;
+    color: white;
+    border: 1px solid black;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: maroon;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 1em;
+  }
+
+  button:hover {
+    background: white;
+    color: maroon;
+  }
+  
+  /* Media query for mobile */
+  @media (max-width: 600px) {
+    .form-item {
+      margin-bottom: 10px;
+    }
+  
+    label {
+      text-align: left;
+    }
+
+    .flex {
+        justify-content: center;
+        text-transform: capitalize;
+        font-size: .8rem;
+      }
+  }
+  

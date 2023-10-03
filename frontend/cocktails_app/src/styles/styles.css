@@ -1,0 +1,375 @@
+html {
+  max-height: 100vh;
+}
+
+body {
+  font-family: 'Homemade Apple', cursive;
+  margin: 1rem auto;
+  max-width: 900px;
+  background: #D3D3D3;
+  /* background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.5)), url('images/breakfast.jpg');
+  background-size: cover;
+  background-repeat: no-repeat; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+nav {
+  background-color: black;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
+  color: orange;
+}
+
+.nav-ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.nav li {
+  list-style-type: none;
+  line-height: 2rem;
+  font-size: 1.25rem;
+}
+
+input, button {
+  padding: 1em;
+  text-align: center;
+  margin-left: 1em;
+  font-weight: bold;
+  color: white;
+  width: 200px;
+}
+input {
+    opacity: .5;
+    color: black;
+}
+
+label {
+  padding-top: 1em;
+}
+
+button {
+  width: 184px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: maroon;
+  color: white;
+}
+
+video {
+  /** Simulationg background-size: cover */
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+
+  position: absolute;
+  top: 50;
+  left: 50;
+}
+
+.video-wrapper {
+  /* Telling our absolute positioned video to 
+  be relative to this element */
+  position: relative;
+
+  /* width: 100vh; */
+  height: 200px;
+
+  /* Will not allow the video to overflow the 
+  container */
+  overflow: hidden;
+
+  /* Centering the container's content vertically 
+  and horizontally */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+.spirit-description {
+  display: none;
+  width: 100%; /* Make it span the entire div */
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+/* Add this style to show the description when active */
+.spirit-name.active + .spirit-description {
+  display: block;
+}
+
+
+.spirit-name {
+  cursor: pointer;
+  color: maroon;
+}
+
+.spirit-name:hover {
+  text-decoration: underline;
+}
+
+.search-form {
+display: flex;
+}
+
+.search-form p {
+font-size: 1.5rem;
+}
+
+.inline li {
+display: inline-block;
+font-size: 1rem;
+margin: 0;
+}
+
+.inline {
+text-align: center;
+}
+
+form {
+margin: 0 auto;
+/* width: 30%; */
+}
+
+input {
+  margin: 1em;
+}
+
+h2 {
+  background: #000000;
+  /* background: rgb(2,0,36); */
+  /* background: rgb(67,67,69); */
+  /* background: linear-gradient(90deg, rgba(67,67,69,1) 0%, rgba(57,57,60,1) 71%, rgba(57,56,55,0.8646052170868348) 100%, rgba(117,116,115,1) 100%); */
+  color: white;
+  padding: 1.5rem 1rem 1rem;
+  line-height: 2rem;
+} 
+
+h2,
+h4 {
+   text-align: center;
+   margin-top: 1rem;
+}
+
+h4 {
+  text-decoration: underline;
+  font-size: 1.5rem;
+  margin-bottom: .5em;
+}
+hr {
+  border-top: 1px dashed #CCCCC4;
+}
+
+span {
+  display: none;
+}
+
+/* li {
+  line-height: 2rem;
+  font-size: 1.25rem; */
+  /* list-style-type: none; */
+/* } */
+
+p {
+margin: 1em;
+}
+
+.center {
+display: flex;
+flex-direction: column;
+}
+
+.img-hero {
+  margin: 0 0.625em;
+  border-radius: 1.25em;
+  /* margin-bottom: .5em; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px dashed #CCCCC4;
+  /* width: 80%; */
+  height: 300px;
+  /* height: 25vh; */
+  margin: 0 auto 1.5em;
+}
+
+.smImg {
+  width: 90%;
+  margin-left: 0.625rem;
+  border-radius: 0.625rem; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* flex-direction: row-reverse; */
+  background: #ffffff;
+  border-radius: 0.625rem;
+  /* margin: 0 0 1rem 0; */
+  padding-top: .5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.directions {
+  display: grid;
+  background-color: #F3F3EC;
+  padding: 0 1rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.094rem;
+  border: 1px dashed #CCCCC4;
+}
+
+.ingredients {
+grid-column: 1 / span 1;
+grid-row: 1;
+}
+
+.method {
+  padding-right: 1em;
+}
+
+.recipeImg {
+grid-column: 1 / span 1;
+grid-row: 2;
+}
+
+.recipeDirect {
+grid-column: 2;
+grid-row: 1 / span 2;
+border-left: 1px dashed #CCCCC4;
+padding: 0 0.938rem;
+}
+
+footer {
+  padding-left: 0.625rem;
+  font-size: 0.625rem;
+  margin: 0 0 0.625rem 0;
+}
+
+/* @media (max-width: 500px) {
+  .directions {
+    display: block;
+  }
+} */
+
+@media screen and (max-width: 650px) {
+  /* body {
+      background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.5)), url('images/breakfast.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+  } */
+  
+  .search-form p {
+    font-size: 1rem;
+    margin: 0 auto;
+    margin-left: 1em;
+    /* padding: .2em; */
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .flexSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input, button {
+    padding: 1em;
+    text-align: center;
+    /* margin: 1em; */
+    font-weight: bold;
+    color: #fff;
+    /* width: 90%; */
+  }
+
+  input {
+    color: black;
+  }
+
+  /* button {
+    margin: 0 auto;
+  } */
+
+  button:hover {
+    cursor: pointer;
+    background: maroon;
+    color: white;
+  }
+/* 
+ form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  } */
+
+  h2 {
+      font-size: 1.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      line-height: 1.5rem;
+  }
+
+  li {
+    font-size: 1rem;
+  }
+
+  .container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      padding: 0;
+  }
+  
+  .ingredients {
+      border: none;
+  }
+
+  .directions {
+    display: block;
+    padding: 1em;
+    font-size: .9rem;
+  }
+  
+  .recipeDirect {
+      padding: 0 0.625rem;
+      border: none;
+  }
+  .img-hero {
+    max-width: 80%;
+    height: 50%;
+  }
+  
+  .smImg {
+      display: block;
+      margin: 0 auto;
+      width: 50%;
+  }
+}
