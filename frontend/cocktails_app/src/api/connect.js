@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiConn = axios.create({
-  baseURL: 'http://localhost:3001'
+  baseURL: 'https://backend-for-cocktails-app.onrender.com'
 });
 
 export default apiConn;
