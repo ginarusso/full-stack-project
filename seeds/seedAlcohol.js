@@ -8,7 +8,7 @@ const alcoholArr = [
         brand: "cabo wabo"
     },
     {
-        alcohol_name: "gin'",
+        alcohol_name: "gin",
         brand: "tanqueray"
     },
     {
