@@ -8,17 +8,18 @@ const connectToDB = new Sequelize("cocktaildatabase", "gina", "f2K6HQvwFvkqffOHW
      }
 })
 
-async function testConnection() {
-    try {
-        await connectToDB.authenticate()
-        console.log("Successfully connected to the database.")
-        return true
-    } catch (error) {
-        console.log("error: ", error)
-        return false
-    }
-}
+// async function testConnection() {
+//     try {
+//         await connectToDB.authenticate()
+//         console.log("Successfully connected to the database.")
+//         return true
+//     } catch (error) {
+//         console.log("error: ", error)
+//         return false
+//     }
+// }
 
 // testConnection()
+module.exports = {connectToDB}
 
-module.exports = {connectToDB, testConnection}
+// module.exports = {connectToDB, testConnection}

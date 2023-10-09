@@ -16,7 +16,7 @@ const IngredientsSummary = ({ allIngredients, initialIngredients }) => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default IngredientsSummary;
+export default IngredientsSummary

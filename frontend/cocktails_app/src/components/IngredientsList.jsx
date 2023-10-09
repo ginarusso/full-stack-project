@@ -1,12 +1,6 @@
-import React from "react";
+import React from "react"
 
 const IngredientsList = ({ ingredients }) => {
-    // console.log(ingredients)
-  // if (!ingredients || ingredients.length === 0) {
-  //   return <div className="ingredients">No ingredients available.</div>;
-  // }
-  
-
   return (
     <div className="ingredients">
       <h4>Ingredients</h4>
@@ -16,7 +10,7 @@ const IngredientsList = ({ ingredients }) => {
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
-export default IngredientsList;
+export default IngredientsList

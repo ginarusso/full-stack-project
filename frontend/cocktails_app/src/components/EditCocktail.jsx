@@ -3,7 +3,7 @@ import '../styles/addCocktail.css'
 import apiConn from "../api/connect"
 
 const EditCocktail = ({editCocktail, currentCocktail}) => {
-    const [alcoholArr, setAlcoholArr] = useState([]);
+    const [alcoholArr, setAlcoholArr] = useState([])
     const [data, setData] = useState([])
     const [cocktail, setCocktail] = useState({
         id: currentCocktail.id,
@@ -24,23 +24,23 @@ const EditCocktail = ({editCocktail, currentCocktail}) => {
         if (currentCocktail.id) {
             apiConn.get(`/cocktail/${currentCocktail.id}`)
                 .then((res) => {
-                    setCocktail(res.data);
+                    setCocktail(res.data)
                 })
                 .catch((error) => {
-                    console.log(error);
-                });
+                    console.log(error)
+                })
         }
-    }, [currentCocktail.id]);
+    }, [currentCocktail.id])
 
       function getAlcoholData() {
         apiConn.get('/alcohol')
           .then(res => {
-            setAlcoholArr(res.data);
-            console.log(res.data);
+            setAlcoholArr(res.data)
+            console.log(res.data)
           })
           .catch(error => {
-            console.log(error);
-          });
+            console.log(error)
+          })
       }
 
 function handleSubmit(e) {
@@ -75,8 +75,8 @@ const handleArrayChange = (e, fieldName) => {
     setCocktail((previousCocktail) => ({
       ...previousCocktail,
       [fieldName]: newArray,
-    }));
-  };
+    }))
+  }
 
   return (
     <>
@@ -124,7 +124,7 @@ const handleArrayChange = (e, fieldName) => {
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           difficulty: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -139,7 +139,7 @@ const handleArrayChange = (e, fieldName) => {
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           portion: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -154,7 +154,7 @@ const handleArrayChange = (e, fieldName) => {
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           time: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -169,7 +169,7 @@ const handleArrayChange = (e, fieldName) => {
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           description: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -184,7 +184,7 @@ const handleArrayChange = (e, fieldName) => {
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           category: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -199,7 +199,7 @@ const handleArrayChange = (e, fieldName) => {
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           image_url: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -214,7 +214,7 @@ const handleArrayChange = (e, fieldName) => {
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           alcohol_id: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -241,8 +241,6 @@ const handleArrayChange = (e, fieldName) => {
           required
         />
     </div>
-        {/* need to be able to add several methods (unlimited steps) */}
-
 
 <button>Edit Cocktail</button>
     </form>

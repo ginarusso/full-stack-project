@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const DeleteAlcohol = ({ deleteAlcoholData }) => {
-  const [id, setId] = useState('');
+  const [id, setId] = useState('')
 
   const handleDelete = () => {
-    deleteAlcoholData(id);
-    setId(''); // Clear the input field after deletion
-  };
+    deleteAlcoholData(id)
+    setId('') // Clear the input field after deletion
+  }
 
   return (
     <div>
@@ -19,7 +19,7 @@ const DeleteAlcohol = ({ deleteAlcoholData }) => {
       />
       <button onClick={handleDelete}>Delete Alcohol</button>
     </div>
-  );
-};
+  )
+}
 
-export default DeleteAlcohol;
+export default DeleteAlcohol

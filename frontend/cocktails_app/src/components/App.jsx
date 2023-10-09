@@ -20,7 +20,6 @@ const App = () => {
   <Routes>
     <Route path='/' element={<RecipeCard />}/>
     <Route path='/alcohol' element={<AlcoholForm />} />
-    {/* <Route path='/alcohol/:id' element={<AlcoholForm />} /> */}
     <Route path='/cocktail' element={<CocktailForm />}/>
     <Route path='*' element={<PageNotFound />}/>
   </Routes>

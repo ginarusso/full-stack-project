@@ -1,8 +1,5 @@
-// cocktails table: id, cocktail_name, difficulty, image_url, portion, time, description, ingredients[], method[], category, alcohol_id
-// alcohol table: id, alcohol_name, brand
-
-const { DataTypes } = require("sequelize");
-const { connectToDB } = require("./conn");
+const { DataTypes } = require("sequelize")
+const { connectToDB } = require("./conn")
 
 const Alcohol = connectToDB.define("alcohol", {
     id: {
@@ -20,6 +17,6 @@ const Alcohol = connectToDB.define("alcohol", {
     }
 }, {
     timestamps: false,
-});
+})
 
-module.exports = Alcohol;
+module.exports = Alcohol

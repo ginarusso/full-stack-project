@@ -1,60 +1,57 @@
-import React, { useState, useEffect } from "react";
-import '../styles/styles.css';
-import CocktailHeader from "../components/CocktailHeader"; 
-import IngredientsList from "../components/IngredientsList";
-import CocktailDetails from "../components/CocktailDetails";
-import CocktailMethod from "../components/CocktailMethod";
-import videoBG from "../images/bar_banner_vid.mp4";
+import React, { useState, useEffect } from "react"
+import '../styles/styles.css'
+import CocktailHeader from "../components/CocktailHeader"
+import IngredientsList from "../components/IngredientsList"
+import CocktailDetails from "../components/CocktailDetails"
+import CocktailMethod from "../components/CocktailMethod"
+import videoBG from "../images/bar_banner_vid.mp4"
 import apiConn from "../api/connect"
-import DeleteCocktail from "../components/DeleteCocktail";
-import EditCocktail from "../components/EditCocktail";
+import DeleteCocktail from "../components/DeleteCocktail"
+import EditCocktail from "../components/EditCocktail"
 
-const initialCocktailImage = "https://cdn.pixabay.com/photo/2014/03/24/17/07/pineapple-juice-295078_1280.png";
-const emptyCocktailGlassImage = "https://cdn.pixabay.com/photo/2014/12/12/22/08/glass-565914_1280.jpg";
+const initialCocktailImage = "https://cdn.pixabay.com/photo/2014/03/24/17/07/pineapple-juice-295078_1280.png"
+const emptyCocktailGlassImage = "https://cdn.pixabay.com/photo/2014/12/12/22/08/glass-565914_1280.jpg"
   
 const RecipeCard = () => {
-  const [searchInput, setSearchInput] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [showInitialImage, setShowInitialImage] = useState(true);
-  const [noResultsFound, setNoResultsFound] = useState(false);
-//   const [visibleSpirit, setVisibleSpirit] = useState(null);
+  const [searchInput, setSearchInput] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+  const [showInitialImage, setShowInitialImage] = useState(true)
+  const [noResultsFound, setNoResultsFound] = useState(false)
   const [data, setData] = useState([])
-  const [searchMade, setSearchMade] = useState(false);
-  const [cocktailDeleted, setCocktailDeleted] = useState(false);
-  const [cocktailEdited, setCocktailEdited] = useState(false);
-  const [editSuccess, setEditSuccess] = useState(false);
-//   const [deleteSuccess, setDeleteSuccess] = useState(false)
-
+  const [searchMade, setSearchMade] = useState(false)
+  const [cocktailDeleted, setCocktailDeleted] = useState(false)
+  const [cocktailEdited, setCocktailEdited] = useState(false)
+  const [editSuccess, setEditSuccess] = useState(false)
 
   useEffect(() => {
     console.log(apiConn)
     getCocktailData()
-  }, []);
+  }, [])
 
   function resetEditSuccess() {
-    setEditSuccess(false);
+    setEditSuccess(false)
   }
 
   const handleSearch = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     console.log("Search triggered!")
-    setSearchMade(true);
+    setSearchMade(true)
 
     // Clean the search input
-    const cleanSearchInput = searchInput.trim().toLowerCase();
+    const cleanSearchInput = searchInput.trim().toLowerCase()
 
 
     // Helper function to check if a string contains the search term as a whole word (without this if you search for gin, anything with ginger is also returned)
 function containsWholeWord(text, word) {
-    const wordPattern = new RegExp(`\\b${word}\\b`, 'i');
-    return wordPattern.test(text);
+    const wordPattern = new RegExp(`\\b${word}\\b`, 'i')
+    return wordPattern.test(text)
   }
   
 // Search logic
 const results = data.filter((recipe) => {
     const ingredientsArray = Array.isArray(recipe.ingredients)
       ? recipe.ingredients
-      : [];
+      : []
 
     return (
       ingredientsArray.some((ingredient) =>
@@ -64,24 +61,23 @@ const results = data.filter((recipe) => {
     );
   });
 
-  setSearchResults(results);
-  console.log("Search results:", results);
-  setNoResultsFound(results.length === 0);
-  setShowInitialImage(results.length === 0);
-  setCocktailEdited(false);
-  setCocktailDeleted(false);
-//   setShowInitialImage(false);
+  setSearchResults(results)
+  console.log("Search results:", results)
+  setNoResultsFound(results.length === 0)
+  setShowInitialImage(results.length === 0)
+  setCocktailEdited(false)
+  setCocktailDeleted(false)
   setSearchInput('');
-};
+}
 
 function getCocktailData() {
   apiConn.get('/cocktail')
     .then(res => {
-      console.log('Success:', res.data);
-      setData(res.data);
+      console.log('Success:', res.data)
+      setData(res.data)
     })
     .catch(error => {
-      console.log('Error:', error);
+      console.log('Error:', error)
     });
 }
 
@@ -89,13 +85,13 @@ function getCocktailData() {
     apiConn
     .delete(`/cocktail/${id}`)
     .then(res => {
-      console.log(`Cocktail with ID ${id} deleted.`);
+      console.log(`Cocktail with ID ${id} deleted.`)
       getCocktailData()
-      setCocktailDeleted(true);
-      setSearchResults([]);
+      setCocktailDeleted(true)
+      setSearchResults([])
     })
     .catch((error) => {
-      console.error(`Error deleting cocktail with ID ${id}:`, error);
+      console.error(`Error deleting cocktail with ID ${id}:`, error)
     });
   }
 
@@ -105,9 +101,9 @@ function getCocktailData() {
         console.log("Edit response: ",res)
         getCocktailData()
         // setCocktailEdited(true);
-        setEditSuccess(true);
-        setSearchResults([]);
-        setTimeout(resetEditSuccess, 3000);
+        setEditSuccess(true)
+        setSearchResults([])
+        setTimeout(resetEditSuccess, 3000)
     })
     .catch(error => {
         console.log(error)
@@ -116,10 +112,6 @@ function getCocktailData() {
 
   return (
     <>
-        {/* {data.map(cocktail => {
-      return  <div>{cocktail.category}</div>
-    })} */}
-
    <div className="video-wrapper">
    <video className="background" src={videoBG} autoPlay loop muted></video>
   </div>
@@ -163,7 +155,6 @@ function getCocktailData() {
                 <CocktailMethod method={recipe.method} />
                 <DeleteCocktail id={recipe.id} deleteCocktailData={deleteCocktailData} setSearchResults={setSearchResults} />
                 <EditCocktail editCocktail={editCocktail} id={recipe.id} currentCocktail={recipe}/>
-
               </div>
             ))}
           </div>
@@ -182,11 +173,6 @@ function getCocktailData() {
     <CocktailHeader title="Your Cocktail Was Not Found" image={emptyCocktailGlassImage} />
   </div>
 )}
-      {/* {cocktailEdited && (
-        <div className="card">
-          <CocktailHeader title="Your Cocktail Has Been Edited" image={initialCocktailImage} />
-        </div>
-      )} */}
       {/* Display "Your Cocktail Was Deleted" message and the empty cocktail glass image */}
       {cocktailDeleted && searchResults.length === 0 && !cocktailEdited && (
         <div className="card">
@@ -196,7 +182,7 @@ function getCocktailData() {
 
       </div>
     </>
-  );
+  )
 }
 
-export default RecipeCard;
+export default RecipeCard

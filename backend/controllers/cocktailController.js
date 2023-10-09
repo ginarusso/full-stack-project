@@ -6,20 +6,20 @@ async function getAllCocktailNames(req, res) {
         const results = await Cocktail.findAll()
         res.status(200).json(results)
     } catch (error) {
-        res.status(500).json({ message: error });
+        res.status(500).json({ message: error })
     }
 }
 
 async function getCocktailByID(req, res) {
     try {
-        const cocktailID = await Cocktail.findByPk(req.params.id);
+        const cocktailID = await Cocktail.findByPk(req.params.id)
         if (!cocktailID) {
-            return res.status(404).json({ message: "Cocktail not found." });
+            return res.status(404).json({ message: "Cocktail not found." })
         }
-        res.status(200).json(cocktailID);
+        res.status(200).json(cocktailID)
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Internal server error" });
+        console.error(error)
+        res.status(500).json({ message: "Internal server error" })
     }
 }
 
@@ -51,12 +51,12 @@ async function addCocktail(req, res) {
             !category ||
             !alcohol_id
         ) {
-            return res.status(400).json({ message: "The cocktail is missing some properties." });
+            return res.status(400).json({ message: "The cocktail is missing some properties." })
         }
 
         // Additional validation for ingredients and method (ensure they are valid JSON arrays)
         if (!Array.isArray(ingredients) || !Array.isArray(method)) {
-            return res.status(400).json({ message: "Ingredients and method must be valid JSON arrays." });
+            return res.status(400).json({ message: "Ingredients and method must be valid JSON arrays." })
         }
 
         // Create the new cocktail
@@ -73,10 +73,10 @@ async function addCocktail(req, res) {
             alcohol_id
         });
 
-        res.status(201).json(newCocktail);
+        res.status(201).json(newCocktail)
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Internal server error" });
+        console.error(error)
+        res.status(500).json({ message: "Internal server error" })
     }
 }
 
@@ -94,13 +94,13 @@ async function editCocktail(req, res) {
             method,
             category,
             alcohol_id
-        } = req.body;
+        } = req.body
 
-        const cocktailID = req.params.id;
+        const cocktailID = req.params.id
 
         // Check if any required fields are missing
         if (!cocktail_name || !difficulty || !image_url || !portion || !time || !description || !ingredients || !method || !category || !alcohol_id) {
-            res.status(400).json({ message: "The cocktail is missing some properties." });
+            res.status(400).json({ message: "The cocktail is missing some properties." })
         } else {
             // Find and update the cocktail
             const [updatedRows] = await Cocktail.update({
@@ -119,14 +119,14 @@ async function editCocktail(req, res) {
             });
 
             if (updatedRows === 0) {
-                res.status(404).json({ message: "The cocktail with the requested ID is not in the database." });
+                res.status(404).json({ message: "The cocktail with the requested ID is not in the database." })
             } else {
-                res.status(200).json({ message: "The cocktail has been edited." });
+                res.status(200).json({ message: "The cocktail has been edited." })
             }
         }
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Internal server error" });
+        console.error(error)
+        res.status(500).json({ message: "Internal server error" })
     }
 }
 

@@ -16,12 +16,12 @@ const AddCocktail = ({addCocktails}) => {
     })
 
     const handleArrayChange = (e, fieldName) => {
-        const newArray = e.target.value.split('\n');
+        const newArray = e.target.value.split('\n')
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           [fieldName]: newArray,
-        }));
-      };
+        }))
+      }
 
 function  handleName(e) {
     setCocktail((previousCocktail) => {
@@ -37,7 +37,7 @@ async function handleOnSubmit(e) {
             console.log(res)
             if (res.status === 201) {
                 console.log("Calling addCocktails")
-                addCocktails(); // Call the callback to trigger the message display
+                addCocktails() // Call the callback to trigger the message display
             }
         })
         .catch(error => {
@@ -96,7 +96,7 @@ return (
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           portion: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -111,7 +111,7 @@ return (
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           time: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -126,7 +126,7 @@ return (
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           description: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -141,7 +141,7 @@ return (
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           category: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -156,7 +156,7 @@ return (
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           image_url: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -171,7 +171,7 @@ return (
         setCocktail((previousCocktail) => ({
           ...previousCocktail,
           alcohol_id: e.target.value,
-        }));
+        }))
       }}
       required
     />
@@ -198,9 +198,6 @@ return (
           required
         />
     </div>
-        {/* need to be able to add several methods (unlimited steps) */}
-
-
 
   <button type="submit">Add Cocktail</button>
 </form>

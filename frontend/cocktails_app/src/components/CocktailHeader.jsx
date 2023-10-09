@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const CocktailHeader = ({ title, image, id }) => {
   return (
@@ -6,7 +6,7 @@ const CocktailHeader = ({ title, image, id }) => {
       <h2>{title}</h2>
       <img className="img-hero" src={image} alt={title} />
     </div>
-  );
+  )
 }
 
-export default CocktailHeader;
+export default CocktailHeader
